@@ -21,70 +21,13 @@ yourvcf.012.indv
 
 yourvcf.012.pos
 
-- Run [VCF012_to_hierfstat.py](https://github.com/lilei1/UK_barley_popgen/blob/main/scripts/VCF012_to_hierfstat.py) to convert those files into the input file for HierFstats:
+-    Run [VCF012_to_hierfstat.py](https://github.com/lilei1/UK_barley_popgen/blob/main/scripts/VCF012_to_hierfstat.py) to convert those files into the input file for HierFstats:
 
-The population are assigned according to if they are wild, landraces, or elite lines. The details of the population assignment can be avaiable [here]()
-
-```bash
-./VCF012_to_hierfstat.py -012 yourvcf.012 -indv yourvcf.012.indv -pos yourvcf.012.pos -pop Ahmand_302_pop.txt
-```
-
----
-
--    Run HierFstats to get the Fst values:
-
-```R
-
-```
-
-### Plot the Fst:
-
-```R
-
-```
-
----
-
-### Assign population based on Structure results and run HierFstats:
-
-### Run structure
-
-- Prepare the input file for structure
-
-    - Randomly choose 1000 SNPs from the vcf file
-
-      Get rid of the header for the vcf file:
+The population are assigned according to if they are wild, landraces, or elite lines. The details of the population assignment can be avaiable [here](https://github.com/lilei1/UK_barley_popgen/blob/main/data/pop.txt)
 
 ```bash
-grep -v "#" WBDC_July2016_production_PTP_filt_noIntro_SNPs.recode.vcf >no_head_WBDC_July2016_production_PTP_filt_noIntro_SNPs.recode.vcf
+./VCF012_to_hierfstat.py -012 yourvcf.012 -indv yourvcf.012.indv -pos yourvcf.012.pos -pop pop.txt
 ```
-
-      Randomly pick 1000 SNPs from the vcf files:
-
-```bash
- shuf -n 1000 no_head_WBDC_July2016_production_PTP_filt_noIntro_SNPs.recode.vcf >1000_no_head_WBDC_July2016_production_PTP_filt_noIntro_SNPs.recode.vcf
-```
-
-    Sort the vcf file:
-
-```bash
-sort -k1,1 -k2,2n 1000_no_head_WBDC_July2016_production_PTP_filt_noIntro_SNPs.recode.vcf >sorted_1000_no_head_WBDC_July2016_production_PTP_filt_noIntro_SNPs.recode.vcf
-```
-
-    Add the header to sorted vcf file
-
-```bash
-cat <(grep "#" WBDC_July2016_production_PTP_filt_noIntro_SNPs.recode.vcf) sorted_1000_no_head_WBDC_July2016_production_PTP_filt_noIntro_SNPs.recode.vcf >1000_WBDC_July2016_production_PTP_filt_noIntro_SNPs.recode.vcf
-```
-
-
-    - Run PGD spider to convert the vcf file into the structure format:
-
-    - Run Structure with 3 burning and 1000 replicates, K set as 1-10
-
-    - assign the populations based on the structure results, and can be avaible [here](https://github.com/MorrellLAB/Barley_Inversions/blob/master/analyses/Hierfstats/Files/Ahmad_306_popbyStructure.txt)
-
-- Run [VCF012_to_hierfstat.py](https://github.com/MorrellLAB/Barley_Inversions/blob/master/analyses/Hierfstats/script/VCF012_to_hierfstat.py) to convert those files into the input file for HierFstats
 
 -    Run HierFstats to get the Fst values [HierFstats_Fst.R](https://github.com/MorrellLAB/Barley_Inversions/blob/master/analyses/Hierfstats/script/HierFstats_Fst.R):
 
