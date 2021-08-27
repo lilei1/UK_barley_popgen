@@ -21,7 +21,7 @@ yourvcf.012.indv
 
 yourvcf.012.pos
 
-- Run [VCF012_to_hierfstat.py](https://github.com/MorrellLAB/Barley_Inversions/blob/master/analyses/Hierfstats/script/VCF012_to_hierfstat.py) to convert those files into the input file for HierFstats:
+- Run [VCF012_to_hierfstat.py](https://github.com/lilei1/UK_barley_popgen/blob/main/scripts/VCF012_to_hierfstat.py) to convert those files into the input file for HierFstats:
 
 The population are assigned based on the GPS location, and the longtitude >40E are considered as earstern and anything <40E are considered as Western population. The details of the population assignment can be avaiable [here](https://github.com/MorrellLAB/Barley_Inversions/blob/master/analyses/Hierfstats/Files/Ahmand_302_popbyGPS.txt)
 
