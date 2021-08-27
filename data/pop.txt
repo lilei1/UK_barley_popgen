@@ -1,0 +1,7 @@
+acc1	1
+acc2	1
+acc3	2
+acc4	2
+acc5	3
+acc6	3
+acc7	3
