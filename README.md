@@ -29,7 +29,7 @@ The population are assigned according to if they are wild, landraces, or elite l
 ./VCF012_to_hierfstat.py -012 yourvcf.012 -indv yourvcf.012.indv -pos yourvcf.012.pos -pop pop.txt
 ```
 
--    Run HierFstats to get the Fst values [HierFstats_Fst.R](https://github.com/MorrellLAB/Barley_Inversions/blob/master/analyses/Hierfstats/script/HierFstats_Fst.R):
+-    Run HierFstats to get the Fst values [HierFstats_Fst.R](https://github.com/lilei1/UK_barley_popgen/blob/main/scripts/HierFstats_Fst.R):
 
 -   Then plot with [R_plot_Fst_str.R](https://github.com/MorrellLAB/Barley_Inversions/blob/master/analyses/Hierfstats/script/R_plot_Fst_str.R) and [R_plot_Fst_gpspop.R](https://github.com/MorrellLAB/Barley_Inversions/blob/master/analyses/Hierfstats/script/R_plot_Fst_gpspop.R)
 
